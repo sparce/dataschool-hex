@@ -1,4 +1,4 @@
-library(pointillist)
+library(pointillist) #remotes::install_github('alexwhan/pointillist')
 library(tidyverse)
 library(hexSticker)
 library(showtext)
