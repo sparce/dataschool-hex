@@ -13,8 +13,10 @@ points <- ds %>%
 set.seed(100)
 points_sub <- points %>% 
   filter(row_number() %in% sample(seq_along(1:nrow(.)), nrow(.) * 0.04, replace = FALSE)) %>% 
-  mutate(size = rnorm(n(), 2),
-         colour = factor(sample(1:5, n(), replace = TRUE)))
+  mutate(
+    size = sample(1:4, n(), replace = TRUE),
+    colour = factor(sample(1:5, n(), replace = TRUE))
+  )
 
 p <- ggplot(points_sub, aes(col, -row)) +
   geom_point(aes(colour = colour, size = size)) +
